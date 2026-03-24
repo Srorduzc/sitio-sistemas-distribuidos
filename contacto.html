@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemas Distribuidos - Contacto</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Sistemas Distribuidos</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Nuestros Servicios</a></li>
-                <li><a href="contacto.html">Contáctenos</a></li>
-            </ul>
-        </nav>
-    </header>
+<style>
+    body {
+        background: #8B0000;
+        color: white;
+        overflow: hidden;
+    }
 
-    <main>
-        <h2>Contáctenos</h2>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+    .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+    .stars::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        box-shadow:
+            80px 120px white,
+            250px 350px white,
+            450px 200px white,
+            650px 300px white;
+        animation: animStars 7s linear infinite;
+    }
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-        <p>📧 Email: contacto@sistemasdistribuidos.com</p>
-        <p>📞 Teléfono: +57 123 456 7890</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 - Todos los derechos reservados. Curso de Sistemas Distribuidos.</p>
-    </footer>
-</body>
-</html>
+    @keyframes animStars {
+        from { transform: translateY(0); }
+        to { transform: translateY(-500px); }
+    }
+</style>
