@@ -1,37 +1,45 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistemas Distribuidos - Inicio</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background: #8B0000;
+            color: white;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+        }
+
+        .stars::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow:
+                50px 100px white,
+                200px 300px white,
+                400px 150px white,
+                600px 250px white,
+                800px 100px white;
+            animation: animStars 5s linear infinite;
+        }
+
+        @keyframes animStars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-500px); }
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <h1>Sistemas Distribuidos</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Nuestros Servicios</a></li>
-                <li><a href="contacto.html">Contáctenos</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h2>Bienvenido al mundo de los Sistemas Distribuidos</h2>
-            <p>Arquitecturas escalables, tolerancia a fallos y computación en la nube.</p>
-        </section>
-        
-        <section class="content">
-            <h3>¿Qué son los Sistemas Distribuidos?</h3>
-            <p>Un sistema distribuido es un conjunto de computadoras independientes que se presentan ante sus usuarios como un único sistema coherente. Ejemplos incluyen sistemas de bases de datos distribuidas, sistemas de archivos en red y plataformas de computación en la nube como AWS, Azure o Google Cloud.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 - Todos los derechos reservados. Curso de Sistemas Distribuidos.</p>
-    </footer>
-</body>
-</html>
+<div class="stars"></div>
