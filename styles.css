@@ -3,16 +3,50 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background: #8B0000; /* rojo oscuro */
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Fondo de estrellas */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        50px 100px white,
+        150px 200px white,
+        300px 400px white,
+        500px 150px white,
+        700px 350px white,
+        900px 250px white,
+        1100px 100px white;
+    animation: estrellas 6s linear infinite;
+    z-index: -1;
+}
+
+@keyframes estrellas {
+    from { transform: translateY(0); }
+    to { transform: translateY(-600px); }
 }
 
 /* Encabezado */
 header {
-    background-color: #2c3e50;
+    background-color: #5a0f0f;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -33,7 +67,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffcccc;
     text-decoration: none;
     font-weight: bold;
 }
@@ -48,14 +82,15 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
 .hero {
     text-align: center;
-    background-color: #ecf0f1;
+    background-color: #ffcccc;
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -67,7 +102,7 @@ main {
 }
 
 .services-list li {
-    background-color: #ecf0f1;
+    background-color: #ffd6d6;
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
@@ -91,19 +126,19 @@ input, textarea, button {
 }
 
 button {
-    background-color: #2c3e50;
+    background-color: #5a0f0f;
     color: white;
     cursor: pointer;
     margin-top: 15px;
 }
 
 button:hover {
-    background-color: #1a252f;
+    background-color: #3d0a0a;
 }
 
 /* Pie de página */
 footer {
-    background-color: #2c3e50;
+    background-color: #5a0f0f;
     color: white;
     text-align: center;
     padding: 10px;
